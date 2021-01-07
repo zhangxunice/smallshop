@@ -1,0 +1,40 @@
+<l-loadmore show type="{{loadingType}}">
+  <view slot="content">
+    <!-- sale -->
+    <image class="top-theme" src="{{topTheme.entrance_img}}"></image>
+
+    <!-- banner -->
+    <swiper class="swiper" indicator-dots indicator-active-color="#157658" autoplay circular>
+      <block wx:for="{{banner.items}}" wx:key="index">
+        <swiper-item>
+          <image class="swiper" src="{{item.img}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- 分类 -->
+    <s-gird gird="{{gird}}"></s-gird>
+
+    <!-- 优惠券 -->
+    <image class="activity" src="{{activity.entrance_img}}"></image>
+
+    <!-- 每周上新 -->
+    <s-spu-scroll l-class="spu-scroll" wx:if="{{themeE.online}}" theme="{{themeE}}" spu-list="{{themeSpu}}">
+    </s-spu-scroll>
+
+    <!-- 风袖甄选 -->
+    <image class="quality" src="{{themeF.entrance_img}}"></image>
+
+    <!-- 热卖 -->
+    <s-hot-list banner="{{bannerG}}"></s-hot-list>
+
+    <!-- 时尚出街 -->
+    <image class="fashion" src="{{themeH.entrance_img}}"></image>
+
+    <!-- 为你推荐 -->
+    <view class="spu-bottom">
+      <image class="title-spu-bottom" src="/images/title@interest.png"></image>
+      <l-water-flow generic:l-water-flow-item="s-spu-preview"></l-water-flow>
+    </view>
+  </view>
+</l-loadmore>
